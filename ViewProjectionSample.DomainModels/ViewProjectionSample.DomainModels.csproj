@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80C10026-4C78-42F0-BD99-E0DCBECCBDD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewProjectionSample.DomainModels</RootNamespace>
+    <AssemblyName>ViewProjectionSample.DomainModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Intersoft.AppFramework, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=5ece42678189aa22, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.AppFramework.5.0.5000.525\lib\Intersoft.AppFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.5.0.5000.525\lib\Intersoft.Crosslight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.Data, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.Data.5.0.5000.525\lib\Intersoft.Crosslight.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.Data.ComponentModel, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.Data.5.0.5000.525\lib\Intersoft.Crosslight.Data.ComponentModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.Data.SQLite, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.Data.Sqlite.5.0.5000.525\lib\Intersoft.Crosslight.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.RestClient, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.RestClient.5.0.5000.525\lib\Intersoft.Crosslight.RestClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.Services.Auth, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.Services.Auth.5.0.5000.525\lib\Intersoft.Crosslight.Services.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Crosslight.Services.Social, Version=5.0.5000.1, Culture=neutral, PublicKeyToken=71f3e3261ac778b5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.Services.Social.5.0.5000.525\lib\Intersoft.Crosslight.Services.Social.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intersoft.Messaging.PushService, Version=5.0.5000.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Intersoft.Crosslight.Services.PushNotification.5.0.5000.525\lib\net45\Intersoft.Messaging.PushService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdventureWorksModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.Context.tt</DependentUpon>
+    </Compile>
+    <None Include="AdventureWorksModel.Controller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.Controller.tt</DependentUpon>
+    </None>
+    <Compile Include="AdventureWorksModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </Compile>
+    <None Include="AdventureWorksModel.Repository.cs">
+      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    </None>
+    <Compile Include="SalesOrderHeaders.partial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AdventureWorksModel.edmx" />
+    <None Include="AdventureWorksModel.edmx.diagram">
+      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+    </None>
+    <None Include="App.config" />
+    <Compile Include="Address.partial.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdventureWorksModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AdventureWorksModel.Controller.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksModel.Controller.cs</LastGenOutput>
+    </Content>
+    <Content Include="AdventureWorksModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdventureWorksModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

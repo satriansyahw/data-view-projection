@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="0dp"
+        android:layout_weight=".25"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <FrameLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/frameLayout1">
+            <TextView
+                android:text="10d"
+                android:fontFamily="sans-serif-light"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/DaysLeftLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cornerradius"
+                android:gravity="center"
+                android:textColor="#FF000000"
+                android:textStyle="normal"
+                android:textSize="20sp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/StatusIcon" />
+        </FrameLayout>
+        <TextView
+            android:text="IN PROGRESS"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/StatusLabel"
+            android:textSize="10sp"
+            android:layout_marginTop="6.0dp"
+            android:textColor="#FF000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="0dp"
+        android:layout_weight=".75"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout2"
+        android:layout_marginLeft="8.8dp">
+        <TextView
+            android:text="SO003784"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/OrderNumberLabel"
+            android:textStyle="bold"
+            android:textColor="#FF000000" />
+        <TextView
+            android:text="Company Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CustomerCompanyLabel"
+            android:textColor="#FF000000" />
+        <TextView
+            android:text="Internet House, 3399 Science Park,\n Cambridge, England"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ShippingAddressLabel"
+            android:lines="2"
+            android:textColor="#FF000000" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:text="17 items"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/ItemQuantityLabel"
+                android:gravity="left"
+                android:textColor="#FF000000" />
+            <TextView
+                android:text="$ 15,567.90"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/TotalLabel"
+                android:gravity="right"
+                android:textColor="#FF000000" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

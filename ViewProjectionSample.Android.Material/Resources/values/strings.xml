@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Add">Add</string>
+  <string name="ApplicationName">ViewProjectionSample.Android</string>
+  <string name="Cancel">Cancel</string>
+  <string name="CheckAll">Select All</string>
+  <string name="ChooseFromGallery">Choose From Gallery</string>
+  <string name="Delete">Delete</string>
+  <string name="DeleteImage">Delete Photo</string>
+  <string name="MarkAsSold">Mark as Sold</string>
+  <string name="More">More</string>
+  <string name="Save">Save</string>
+  <string name="SearchHint">Search</string>
+  <string name="SelectImage">Select Image</string>
+  <string name="TakePhoto">Take Photo</string>
+  <string name="UncheckAll">Uncheck All</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/linearLayout2">
+        <TextView
+            android:id="@+id/DescriptionLabel"
+            android:text="Intersoft Crosslight makes native cross-platform mobile development truly a breeze -- thanks to its innovative data binding framework that makes MVVM possible in the iOS and Android world.\n\nThis sample demonstrate implementation of several Crosslight 4 new features including Data handling enhancement and several new User Interface feature. Data enhancement included was View Project and Any filter Descriptor that will significantly reduce data traffics and ease the data hadling. The new User Interface feature introduce in Crosslight 4 are SearchController and UITextLabel of iOS and the counterpart of this feature on Android. In addition, this sample will demonstrate the fundamental Data Navigation and Content Navigation capabilities supported in Crosslight."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp" />
+        <Button
+            android:id="@+id/LearnMoreButton"
+            android:text="Learn More"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+</ScrollView>

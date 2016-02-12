@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InventoryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="InventoryModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="InventoryModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Items" EntityType="InventoryModel.Store.Items" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_InventoryToCategory" Association="InventoryModel.Store.FK_InventoryToCategory">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Image" Type="varchar(max)" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Price" Type="decimal" />
+          <Property Name="Location" Type="varchar(max)" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="SerialNumber" Type="varchar(max)" />
+          <Property Name="PurchaseDate" Type="date" />
+          <Property Name="Sold" Type="bit" Nullable="false" />
+          <Property Name="SellDate" Type="date" />
+          <Property Name="Notes" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK_InventoryToCategory">
+          <End Role="Categories" Type="InventoryModel.Store.Categories" Multiplicity="1" />
+          <End Role="Items" Type="InventoryModel.Store.Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Items">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InventoryModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:ib12="http://www.ideablade.com/edm/2012" xmlns:is12="http://www.intersoftpt.com/edm/2012">
+        <EntityContainer Name="InventoryEntities" p1:LazyLoadingEnabled="true" is12:IntersoftWebApiEnabled="true">
+          <EntitySet Name="Categories" EntityType="InventoryModel.Category" />
+          <EntitySet Name="Items" EntityType="InventoryModel.Item" />
+          <AssociationSet Name="FK_InventoryToCategory" Association="InventoryModel.FK_InventoryToCategory">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Type="Int32" Name="CategoryID" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Items" Relationship="InventoryModel.FK_InventoryToCategory" FromRole="Category" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Type="Int32" Name="ItemID" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="Int32" Name="Qty" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="0" />
+          <Property Type="String" Name="Location" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SerialNumber" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="PurchaseDate" Precision="0" />
+          <Property Type="Boolean" Name="Sold" Nullable="false" />
+          <Property Type="DateTime" Name="SellDate" Precision="0" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Category" Relationship="InventoryModel.FK_InventoryToCategory" FromRole="Item" ToRole="Category" />
+        </EntityType>
+        <Association Name="FK_InventoryToCategory">
+          <End Type="InventoryModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="InventoryModel.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InventoryModelStoreContainer" CdmEntityContainer="InventoryEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="InventoryModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="InventoryModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
