@@ -1,7 +1,6 @@
 using Android.Runtime;
 using Intersoft.Crosslight;
 using Intersoft.Crosslight.Android.v7;
-using Android.Views;
 using System;
 using ViewProjectionSample.BindingProviders;
 using ViewProjectionSample.ViewModels;
@@ -21,6 +20,17 @@ namespace ViewProjectionSample.Android.Activities
         public SalesOrderHeaderViewPagerFragment(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
         {
+        }
+
+        #endregion
+
+        #region Methods
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+
+            this.AddBarItem(new BarItem("SearchButton", CommandItemType.Search));
         }
 
         #endregion

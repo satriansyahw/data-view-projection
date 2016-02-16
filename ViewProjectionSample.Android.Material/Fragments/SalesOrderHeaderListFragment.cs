@@ -9,7 +9,7 @@ using ViewProjectionSample.ViewModels;
 namespace ViewProjectionSample.Android.Activities
 {
     [ImportBinding(typeof(SalesOrderHeaderListBindingProvider))]
-    public class SalesOrderHeaderListFragment : SearchableRecyclerViewFragment<SalesOrderHeaderListViewModel>
+    public class SalesOrderHeaderListFragment : RecyclerViewFragment<SalesOrderHeaderListViewModel>
     {
         #region Constructors
 
@@ -43,8 +43,6 @@ namespace ViewProjectionSample.Android.Activities
         {
             base.Initialize();
             
-            this.AddBarItem(new BarItem("SearchButton", CommandItemType.Search));
-            this.FilterScope = "SalesOrderNumber";
             this.IconId = Resource.Drawable.ic_toolbar;
             this.InteractionMode = ListViewInteraction.Navigation;
         }

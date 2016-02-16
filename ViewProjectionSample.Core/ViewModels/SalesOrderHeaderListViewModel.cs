@@ -61,19 +61,11 @@ namespace ViewProjectionSample.ViewModels
 
 
         // Determine whether current state is in Search State.
-        protected bool IsSearchState{ get; set; }
+        protected bool IsSearchState { get; set; }
 
         #endregion
 
         #region Methods
-
-        public override void Filter(string query, string scope)
-        {
-            if (scope == "SalesOrderNumber")
-                this.FilterItems = this.Items.Where(o => o.SalesOrderNumber.ToLowerInvariant().StartsWith(query.ToLowerInvariant())).ToList();
-
-            base.Filter(query,scope);
-        }
 
         private bool CanExecuteLoadIncrementalCommand(object paramater)
         {
@@ -118,12 +110,11 @@ namespace ViewProjectionSample.ViewModels
         protected override void ExecuteSelect(object parameter)
         {
             base.ExecuteSelect(parameter);
-            IApplicationContext context = this.GetService<IApplicationService>().GetContext();
 
             // Disabled Navigation Select Action on Editing Mode.
             if (!this.IsEditing)
             {
-                if (this.IsSearchState && context.Platform.OperatingSystem == OSKind.iOS)
+                if (this.IsSearchState)
                 {
                     // Close this Modal and set the Result Action as Done.
                     // This will later be further process by Result Callback.

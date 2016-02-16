@@ -15,11 +15,9 @@ namespace ViewProjectionSample.ViewModels
             items.Add(new NavigationItem("Pending", typeof(SalesOrderHeaderListViewModel)));
             items.Add(new NavigationItem("Complete", typeof(SalesOrderHeaderListViewModel)));
             items.Add(new NavigationItem("About", typeof(AboutViewModel)));
-            this.Items = items.ToArray();
 
-            IApplicationContext context = this.GetService<IApplicationService>().GetContext();
-            if (context.Platform.OperatingSystem == OSKind.iOS)
-                this.SearchCommand = new DelegateCommand(ExecuteSearchCommand);
+            this.Items = items.ToArray();
+            this.SearchCommand = new DelegateCommand(ExecuteSearchCommand);
         }
 
         #endregion

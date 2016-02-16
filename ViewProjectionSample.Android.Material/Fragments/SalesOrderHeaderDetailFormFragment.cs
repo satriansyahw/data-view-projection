@@ -1,5 +1,4 @@
 using Android.Runtime;
-using Android.Views;
 using Intersoft.Crosslight;
 using Intersoft.Crosslight.Android.v7;
 using System;
@@ -7,7 +6,7 @@ using ViewProjectionSample.ViewModels;
 
 namespace ViewProjectionSample.Android.Activities
 {
-    public class SalesOrderHeaderDetailFormFragment : Intersoft.Crosslight.Android.v7.FormFragment<SalesOrderHeaderDetailViewModel>
+    public class SalesOrderHeaderDetailFormFragment : FormFragment<SalesOrderHeaderDetailViewModel>
     {
         #region Constructors
 
